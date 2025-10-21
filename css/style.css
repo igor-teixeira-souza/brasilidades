@@ -50,7 +50,7 @@ header {
   position: relative;
   flex-direction: row;
   width: 100vw;
-  background: linear-gradient(90deg, #009739 0%, #002776 100%);
+  background: linear-gradient(90deg, #0c8d3d 0%, #a1ca0b 100%);
   color: #fff;
   padding: 2.5rem 0 1.2rem 0;
   text-align: center;
@@ -115,7 +115,7 @@ header h1 {
   border-radius: 2px;
   opacity: 0;
   transform: scaleX(0);
-  transition: opacity 0.3s, transform 0.35s cubic-bezier(.77, 0, .175, 1);
+  transition: opacity 0.3s, transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
   box-shadow: 0 2px 8px rgb(0, 0, 0);
   z-index: 3;
 }
@@ -193,43 +193,6 @@ h2 {
   transition: box-shadow 0.3s, transform 0.2s;
 }
 
-/* ======== PARÁGRAFOS ======== */
-.p-left {
-  align-self: flex-start;
-  align-items: center;
-  flex-direction: row;
-  background-color: #f9f9f9;
-  border-left: 5px solid #009739;
-  border-radius: 8px;
-  height: 100%;
-}
-
-.p-left,
-img {
-  width: 40%;
-}
-
-.p-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.p-right {
-  align-self: flex-end;
-  align-items: center;
-  background-color: #f9f9f9;
-  border-right: 5px solid #002776;
-  border-radius: 8px;
-  height: 100%;
-}
-
-.p-right,
-img {
-  width: 40%;
-}
-
 /* ======== BANNER CENTRAL (TERCEIRA IMAGEM) ======== */
 .full-banner {
   position: relative;
@@ -239,7 +202,6 @@ img {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border-radius: 12px;
 }
 
 /* Imagem de fundo com efeito de zoom */
@@ -265,7 +227,7 @@ img {
   background: rgba(0, 0, 0, 0.45);
   color: #fff;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 1px;
   text-align: center;
   font-size: 1.3rem;
   line-height: 1.8;
@@ -313,7 +275,7 @@ section,
 .login-box {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 1.2s cubic-bezier(.77, 0, .175, 1) forwards;
+  animation: fadeInUp 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
 @keyframes fadeInUp {
@@ -332,7 +294,7 @@ section,
 .menu a:hover,
 .login-box button:hover {
   background-color: rgba(0, 0, 0, 0.274);
-  
+
   color: #ffffff;
   transform: scale(1.08);
 }
@@ -349,11 +311,10 @@ section,
   text-align: center;
   position: relative;
   overflow: hidden;
-  animation: fadeInUp 1.2s cubic-bezier(.77, 0, .175, 1) forwards;
+  animation: fadeInUp 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   box-shadow: 0 8px 40px 0 rgba(0, 39, 118, 0.18), 0 2px 24px 0 #ffcb0033;
-  border-radius: 0 0 32px 32px;
   backdrop-filter: blur(7px);
-  box-sizing: border-box;
+  border-left: none;
 }
 
 .hero::after {
@@ -383,6 +344,12 @@ section,
   z-index: 2;
 }
 
+.hero-title:hover {
+  transform: scale(1.08);
+  border-color: #ffcb00;
+  transition: 0.1s;
+}
+
 .hero-desc {
   font-size: 1.5rem;
   max-width: 600px;
@@ -397,9 +364,16 @@ section,
   z-index: 2;
 }
 
+.hero-desc:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 24px #ffcb0055;
+  border-color: #ffcb00;
+  transition: 0.1s;
+}
+
 .hero-btn {
-  background: linear-gradient(90deg, #ffcb00 60%, #009739 100%);
-  color: #002776;
+  background: linear-gradient(90deg, #ffcb00 60%, #0da748 100%);
+  color: #2f00ff;
   border: none;
   border-radius: 8px;
   padding: 1rem 2.5rem;
@@ -410,6 +384,7 @@ section,
   transition: background 0.3s, color 0.3s, transform 0.2s;
   position: relative;
   z-index: 2;
+  text-decoration: none;
 }
 
 .hero-btn:hover {
@@ -418,75 +393,185 @@ section,
   transform: scale(1.08);
   box-shadow: 0 4px 24px #ffcb0055;
   border-color: #ffcb00;
+  transition: 0.1s;
 }
 
-/* Layout profissional para divs de informações */
-.info-grid {
+/* ======== NOVO LAYOUT SEÇÃO HISTÓRIA ======== */
+.historia-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 4rem 5%;
+  background: rgba(176, 255, 152, 0.9);
+  box-shadow: 0 6px 32px rgba(0, 39, 118, 0.1);
+
+}
+
+.historia-text {
+  flex: 1 1 450px;
+  max-width: 600px;
+}
+
+.historia-text h2 {
+  color: #002776;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.historia-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.historia-img {
+  flex: 1 1 450px;
+  height: 500px;
+  background-image: url("../img/Colagem_medalhistas_de_ouro.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 151, 57, 0.2);
+}
+
+/* ======== SEÇÃO ÍDOLOS ======== */
+.idolos-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 5rem 5%;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.idolos-section h2 {
+  color: #009739;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.idolos-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2.5rem;
-  width: 90vw;
+  width: 100%;
   max-width: 1200px;
-  margin: 3rem auto;
-  padding: 2rem 0;
+  margin: 0 auto;
+
 }
 
-.info-card {
+.idolo-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 39, 118, 0.10);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: box-shadow 0.3s, transform 0.2s;
-  position: relative;
+  width: 100%;
+  height: 500px;
   overflow: hidden;
-  animation: fadeInUp 1.2s cubic-bezier(.77, 0, .175, 1) forwards;
+  box-shadow: 0 4px 16px rgba(0, 39, 118, 0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.info-card:hover {
-  box-shadow: 0 8px 32px rgba(0, 151, 57, 0.18);
+.idolo-card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.idolo-card h3 {
+  color: #002776;
+  margin: 1rem 0 0.5rem;
+  font-size: 1.4rem;
+}
+
+.idolo-card p {
+  color: #444;
+  font-size: 1rem;
+  padding: 0 1.2rem 1.5rem;
+  line-height: 1.6;
+}
+
+.idolo-card:hover {
   transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 32px rgba(0, 151, 57, 0.2);
 }
 
-.info-card h3 {
-  color: #009739;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+/* ======== SEÇÃO INCLUSÃO ======== */
+.inclusao-section {
+  background: linear-gradient(90deg, #009739 0%, #002776 100%);
+  color: #ffffff;
+  padding: 5rem 8%;
+  text-align: center;
 }
 
-.info-card p {
-  color: #222;
-  font-size: 1.1rem;
+.inclusao-section h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.inclusao-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 1rem;
   line-height: 1.7;
 }
 
-.info-card .card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #ffcb00;
+/* ======== SEÇÃO SOBRE ======== */
+.sobre-section {
+  display: flex;
+  justify-items: center;
+  flex-direction: row;
+  background: #fff;
+  text-align: center;
+  padding: 4rem 8%;
 }
 
-@media (max-width: 900px) {
-  .hero-title {
-    font-size: 2.2rem;
+.sobre-section h2 {
+  color: #002776;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.sobre-section p {
+  color: #222;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  line-height: 1.8;
+}
+
+.sobre-text {
+  flex: 1 1 450px;
+  max-width: 600px;
+}
+
+.sobre-img{
+  flex: 1 1 450px;
+  height: 500px;
+  background-image: url("../img/713.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 151, 57, 0.2);
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .historia-section {
+    flex-direction: column;
+    text-align: center;
   }
-  .hero-desc {
-    font-size: 1.1rem;
-  }
-  .info-grid {
-    gap: 1.2rem;
+  .historia-img {
+    width: 100%;
+    height: 250px;
   }
 }
-@media (max-width: 600px) {
-  .hero {
-    min-height: 40vh;
-  }
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 /* ======== RODAPÉ ======== */
 footer {
